@@ -20,7 +20,7 @@ O chat foi desenvolvido para facilitar essa comunicação, tinha como objetivo s
 
 ## :rocket: Rodando o projeto
 * Página inicial
-<img src="imagens/homepage.PNG" alt="homepage">
+<img src="prints/homepage.PNG" alt="homepage">
 * Cadastro
 <img src="prints/cadastro.PNG" alt="cadastro">
 * Verificação
