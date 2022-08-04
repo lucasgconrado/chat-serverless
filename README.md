@@ -20,21 +20,21 @@ O chat foi desenvolvido para facilitar essa comunicação, tinha como objetivo s
 
 ## :rocket: Rodando o projeto
 * Página inicial
-<img src="imagens/homepage.png" alt="homepage">
+<img src="imagens/homepage.PNG" alt="homepage">
 * Cadastro
 <img src="prints/cadastro.PNG" alt="cadastro">
 * Verificação
-<img src="prints/verificacao.png" alt="verificacao">
+<img src="prints/verificacao.PNG" alt="verificacao">
 * Novo Usuário
-<img src="prints/novousuario.png" alt="novousuario">
+<img src="prints/novousuario.PNG" alt="novousuario">
 * Nova Conversa
-<img src="prints/novaconversa.png" alt="novaconversa">
+<img src="prints/novaconversa.PNG" alt="novaconversa">
 * Mensagem
-<img src="prints/mensagem.png" alt="mensagem">
+<img src="prints/mensagem.PNG" alt="mensagem">
 * Outro usuário
-<img src="prints/outrousuario.png" alt="outrousuario">
+<img src="prints/outrousuario.PNG" alt="outrousuario">
 * Conversa simultânea
-<img src="prints/conversa2.png" alt="conversa2">
+<img src="prints/conversa2.PNG" alt="conversa2">
 
 
 ## :soon: Implementação futura
