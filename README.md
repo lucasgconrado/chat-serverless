@@ -22,7 +22,7 @@ O chat foi desenvolvido para facilitar essa comunicação, tinha como objetivo s
 * Página inicial
 <img src="imagens/homepage.png" alt="homepage">
 * Cadastro
-<img src="prints/cadastro.png" alt="cadastro">
+<img src="prints/cadastro.PNG" alt="cadastro">
 * Verificação
 <img src="prints/verificacao.png" alt="verificacao">
 * Novo Usuário
