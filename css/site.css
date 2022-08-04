@@ -1,0 +1,11 @@
+body {
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+.parent{
+    display: flex;
+    text-align: right;
+    margin: 0px auto;
+    width: 250px;
+    height: 73px;
+}

@@ -1,0 +1,232 @@
+---
+swagger: "2.0"
+info:
+  description: "Api para o chat"
+  version: "2022-08-04T14:13:51Z"
+  title: "ChatAPI"
+host: "vrqw7zn9vh.execute-api.us-east-1.amazonaws.com"
+basePath: "/prod"
+schemes:
+- "https"
+paths:
+  /conversations:
+    get:
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/ConversationList"
+          headers:
+            Access-Control-Allow-Origin:
+              type: "string"
+      security:
+      - Cognito: []
+    post:
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "NewConversation"
+        required: true
+        schema:
+          $ref: "#/definitions/NewConversation"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/ConversationId"
+          headers:
+            Access-Control-Allow-Origin:
+              type: "string"
+      security:
+      - Cognito: []
+    options:
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: "string"
+            Access-Control-Allow-Methods:
+              type: "string"
+            Access-Control-Allow-Headers:
+              type: "string"
+  /conversations/{id}:
+    get:
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Conversation"
+          headers:
+            Access-Control-Allow-Origin:
+              type: "string"
+        "401":
+          description: "401 response"
+          schema:
+            $ref: "#/definitions/Error"
+      security:
+      - Cognito: []
+    post:
+      consumes:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "NewMessage"
+        required: true
+        schema:
+          $ref: "#/definitions/NewMessage"
+      responses:
+        "204":
+          description: "204 response"
+          headers:
+            Access-Control-Allow-Origin:
+              type: "string"
+      security:
+      - Cognito: []
+    options:
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: "string"
+            Access-Control-Allow-Methods:
+              type: "string"
+            Access-Control-Allow-Headers:
+              type: "string"
+  /users:
+    get:
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/UserList"
+          headers:
+            Access-Control-Allow-Origin:
+              type: "string"
+      security:
+      - Cognito: []
+    options:
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      responses:
+        "200":
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: "string"
+            Access-Control-Allow-Methods:
+              type: "string"
+            Access-Control-Allow-Headers:
+              type: "string"
+securityDefinitions:
+  Cognito:
+    type: "apiKey"
+    name: "Authorization"
+    in: "header"
+    x-amazon-apigateway-authtype: "cognito_user_pools"
+definitions:
+  ConversationId:
+    type: "string"
+  Empty:
+    type: "object"
+    title: "Empty Schema"
+  NewMessage:
+    type: "string"
+  Error:
+    type: "object"
+    properties:
+      message:
+        type: "string"
+    title: "Error Schema"
+  Conversation:
+    type: "object"
+    properties:
+      id:
+        type: "string"
+      participants:
+        type: "array"
+        items:
+          type: "string"
+      last:
+        type: "number"
+        format: "utc-millisec"
+      messages:
+        type: "array"
+        items:
+          type: "object"
+          properties:
+            sender:
+              type: "string"
+            time:
+              type: "number"
+              format: "utc-millisec"
+            message:
+              type: "string"
+  UserList:
+    type: "array"
+    items:
+      type: "string"
+  ConversationList:
+    type: "array"
+    items:
+      type: "object"
+      properties:
+        id:
+          type: "string"
+        participants:
+          type: "array"
+          items:
+            type: "string"
+        last:
+          type: "number"
+          format: "utc-millisec"
+  NewConversation:
+    type: "array"
+    items:
+      type: "string"
